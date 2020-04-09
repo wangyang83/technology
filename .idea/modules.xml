@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/springBoot运用redis技术/springBoot运用redis技术.iml" filepath="$PROJECT_DIR$/springBoot运用redis技术/springBoot运用redis技术.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/technology.iml" filepath="$PROJECT_DIR$/.idea/technology.iml" />
     </modules>
   </component>
