@@ -9,9 +9,7 @@
         <module name="springBoot运用redis技术" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="com" target="1.5" />
-      <module name="springBoot Redis技术" target="1.5" />
+    <bytecodeTargetLevel target="1.8">
       <module name="springBoot运用redis技术" target="1.8" />
     </bytecodeTargetLevel>
   </component>

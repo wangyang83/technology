@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.redis.basics.mapper.UserMapper">
+
+    <resultMap id="userResult" type="com.redis.basics.entity.vo.User">
+        <result property="name" column="name"/>
+        <result property="sex" column="sex"/>
+        <result property="address" column="address"/>
+        <result property="telephone" column="telephone"/>
+        <result property="cellphone" column="cellphone"/>
+        <result property="identityCard" column="identity_card"/>
+        <result property="birth" column="birth"/>
+
+    </resultMap>
+    <insert id="insertUser" parameterType="com.redis.basics.entity.vo.User">
+        INSERT INTO user(`id`, `name`, `sex`, `address`, `telephone`, `cellphone`, `identity_card`, `birth`, `createDate`, `createUser`)
+        VALUES
+        (#{id},#{name}, #{sex}, #{address}, #{telephone}, #{cellphone}, #{identityCard}, #{birth}, #{createDate}, #{createUser});
+    </insert>
+
+    <select id="selectUser"  parameterType="com.redis.basics.entity.search.UserSearch" resultMap="userResult">
+        select * from `user` where name = #{name}
+    </select>
+</mapper>
