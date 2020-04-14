@@ -1,10 +1,5 @@
 package com.redis.basics.controller;
 
-import com.redis.assist.enumerate.CacheNameSpace;
-import com.redis.assist.note.QueryCache;
-import com.redis.assist.note.QueryCacheKey;
-import com.redis.basics.entity.search.UserSearch;
-import com.redis.basics.entity.vo.User;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
@@ -13,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.InputStream;
-import java.util.List;
 import java.util.Properties;
 
 /**
@@ -25,7 +19,6 @@ import java.util.Properties;
 @Controller
 public class LoginController {
 
-    @QueryCache(nameSpace = CacheNameSpace.SSO_USER)
     @ApiOperation(value = "登录")
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody
@@ -35,7 +28,7 @@ public class LoginController {
        }
     }
 
-    @ApiOperation(value = "A使用redis查询查询用户")
+    @ApiOperation(value = "获取database")
     @RequestMapping(value = "/getUrl",method = RequestMethod.POST)
     @ResponseBody
     public void getUrl() throws Exception{
