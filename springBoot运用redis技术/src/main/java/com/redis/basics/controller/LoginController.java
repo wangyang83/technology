@@ -22,6 +22,7 @@ public class LoginController {
     @ApiOperation(value = "登录")
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody
+
     public void selectUserByRedis(String name,String password){
        if(("123").equals(name)&&("123456").equals(password)){
            System.out.println("登录成功");
