@@ -1,5 +1,7 @@
 package com.redis.basics.service.impl;
 
+import com.redis.assist.domain.Page;
+import com.redis.assist.domain.SimplePage;
 import com.redis.basics.entity.search.UserSearch;
 import com.redis.basics.entity.vo.User;
 import com.redis.basics.mapper.UserMapper;
@@ -33,14 +35,16 @@ public class UserServiceImpl implements UserService {
     /**
      * B
      */
-    @Cacheable(value = "selectUser")
-    public List<User> selectUser(UserSearch userSearch) {
-        List<User> users = null;
+
+    public Page selectUser(UserSearch userSearch) {
+        Page page = null;
         try{
-            users = userMapper.selectUser(userSearch);
+            List<User> users = userMapper.getUser(userSearch);
+            page = new Page(userSearch);
+            page.setData(users);
         }catch (Exception e){
             e.printStackTrace();
         }
-        return users;
+        return page;
     }
 }

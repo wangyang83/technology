@@ -1,5 +1,6 @@
 package com.redis.basics.entity.search;
 
+import com.redis.assist.domain.Page;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -8,7 +9,7 @@ import io.swagger.annotations.ApiModelProperty;
  * @date 2020/4/9 15:34
  */
 @ApiModel(value = "UserSearch",description = "用户表-查询")
-public class UserSearch {
+public class UserSearch extends Page {
 
     @ApiModelProperty(value = "姓名")
     private String name;

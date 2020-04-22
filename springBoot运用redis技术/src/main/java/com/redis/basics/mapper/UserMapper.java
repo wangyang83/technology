@@ -1,7 +1,9 @@
 package com.redis.basics.mapper;
 
+import com.redis.assist.domain.Page;
 import com.redis.basics.entity.search.UserSearch;
 import com.redis.basics.entity.vo.User;
+import org.apache.ibatis.annotations.Param;
 import org.mapstruct.Mapper;
 
 import java.util.List;
@@ -26,5 +28,7 @@ public interface UserMapper {
      * @return
      */
     List<User> selectUser(UserSearch userSearch);
+
+    List<User> getUser(UserSearch userSearch);
 
 }

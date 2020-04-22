@@ -1,5 +1,7 @@
 package com.redis.basics.controller;
 
+import com.redis.assist.domain.Page;
+import com.redis.assist.domain.ResultDo;
 import com.redis.assist.enumerate.CacheNameSpace;
 import com.redis.assist.note.QueryCache;
 import com.redis.assist.note.QueryCacheKey;
@@ -33,7 +35,7 @@ public class UserController {
     public List<User> selectUserByRedis(@QueryCacheKey UserSearch userSearch){
         List<User> users= null;
         try{
-            users = userService.selectUser(userSearch);
+//            users = userService.selectUser(userSearch);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -43,14 +45,16 @@ public class UserController {
     @ApiOperation(value = "查询用户")
     @RequestMapping(value = "/selectUser",method = RequestMethod.POST)
     @ResponseBody
-    public List<User> selectUser(UserSearch userSearch){
-        List<User> users= null;
+    public ResultDo<Page> selectUser(UserSearch userSearch){
+        ResultDo<Page> result = new ResultDo<>();
+        Page page= null;
         try{
-            users = userService.selectUser(userSearch);
+            page = userService.selectUser(userSearch);
+            result.setSuccessWithResult(page);
         }catch (Exception e){
             e.printStackTrace();
         }
-        return users;
+        return result;
     }
 
 

@@ -21,4 +21,9 @@
     <select id="selectUser"  parameterType="com.redis.basics.entity.search.UserSearch" resultMap="userResult">
         select * from `user` where name = #{name}
     </select>
+
+
+    <select id="getUser"   resultMap="userResult">
+        select * from `user`
+    </select>
 </mapper>

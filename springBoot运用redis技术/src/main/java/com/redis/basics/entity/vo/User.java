@@ -4,6 +4,8 @@ import com.redis.assist.domain.BaseDomain;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.time.Year;
+
 /**
  * @author 王阳
  * @date 2020/4/9 13:48
@@ -25,6 +27,10 @@ public class User extends BaseDomain {
     private  String identityCard ;
     @ApiModelProperty(value = "出生时间")
     private String birth ;
+    public User(){
+
+    }
+
 
     public String getName() {
         return name;

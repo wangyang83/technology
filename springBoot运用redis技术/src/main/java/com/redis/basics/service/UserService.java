@@ -1,5 +1,6 @@
 package com.redis.basics.service;
 
+import com.redis.assist.domain.Page;
 import com.redis.basics.entity.search.UserSearch;
 import com.redis.basics.entity.vo.User;
 
@@ -21,6 +22,6 @@ public interface UserService {
      * @param userSearch
      * @return
      */
-    public List<User> selectUser(UserSearch userSearch);
+    public Page selectUser(UserSearch userSearch);
 }
 
